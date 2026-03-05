@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "task.schema.json",
+  "title": "Task",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "statement",
+    "points"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "id": { "$ref": "./shared/common.schema.json#/$defs/taskId" },
+    "name": { "type": "string", "minLength": 1, "maxLength": 200 },
+    "statement": { "type": "string", "minLength": 1 },
+    "points": { "$ref": "./shared/common.schema.json#/$defs/nonNegativeNumber" },
+    "subject": { "type": "string" },
+    "topic": { "type": "string" },
+    "tags": {
+      "type": "array",
+      "items": { "$ref": "./shared/common.schema.json#/$defs/nonEmptyString" },
+      "default": []
+    },
+    "render": { "$ref": "./core/render.schema.json" },
+    "assets": {
+      "type": "array",
+      "items": { "$ref": "./core/asset.schema.json" },
+      "default": []
+    },
+    "parts": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "text"],
+        "properties": {
+          "id": { "$ref": "./shared/common.schema.json#/$defs/partId" },
+          "text": { "type": "string", "minLength": 1 },
+          "points": { "$ref": "./shared/common.schema.json#/$defs/nonNegativeNumber" },
+          "assets": {
+            "type": "array",
+            "items": { "$ref": "./core/asset.schema.json" },
+            "default": []
+          },
+          "workspace": {
+            "type": "array",
+            "items": { "$ref": "./core/workspace.schema.json" },
+            "default": []
+          }
+        }
+      }
+    },
+    "workspace": {
+      "type": "array",
+      "items": { "$ref": "./core/workspace.schema.json" },
+      "default": [
+        { "type": "lines", "lines": 4 }
+      ]
+    },
+    "template": { "$ref": "./template/template.schema.json" },
+    "instances": {
+      "type": "array",
+      "items": { "$ref": "./template/instance.schema.json" },
+      "default": []
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ref": { "type": "string" },
+        "notes": { "type": "string" }
+      }
+    },
+    "version": { "type": "string", "default": "1.0" }
+  }
+}

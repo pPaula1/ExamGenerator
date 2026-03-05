@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "template/instance.schema.json",
+  "title": "Generated instance snapshot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["variant_id", "values"],
+  "properties": {
+    "variant_id": { "$ref": "../shared/common.schema.json#/$defs/variantId" },
+    "seed": {
+      "type": ["integer", "string", "null"],
+      "default": null
+    },
+    "values": {
+      "type": "object",
+      "additionalProperties": {
+        "type": ["string", "number", "integer", "boolean", "null"]
+      }
+    }
+  }
+}

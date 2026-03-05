@@ -1,0 +1,38 @@
+{
+  "$schema": "task.schema.json",
+  "id": "2025_mii_ht_a4",
+  "name": "Raute",
+  "subject": "Mathematik",
+  "topic": "Geometrie",
+  "tags": [
+    "abschlussprüfung",
+    "realschule",
+    "bayern",
+    "2025",
+    "geometrie",
+    "raute"
+  ],
+  "points": 2,
+  "statement": "Die nebenstehende Skizze zeigt eine Raute ABCD, für die gilt: ∠BAD = 120°. Begründen Sie, dass gilt: |AC| = |AD|.",
+  "assets": [
+    {
+      "path": "assets/A4_rhombus.png",
+      "caption": null,
+      "width": "0.6\\linewidth",
+      "placement": "below_statement",
+      "column": "full"
+    }
+  ],
+  "workspace": [
+    {
+      "type": "grid",
+      "height_cm": 5,
+      "grid": "karo_5mm"
+    }
+  ],
+  "source": {
+    "ref": "Abschlussprüfung 2025 an den Realschulen in Bayern – Mathematik II – Haupttermin (PDF)",
+    "notes": "Aufgabengruppe A, Aufgabe A4 (Seite 3)"
+  },
+  "version": "1.0"
+}

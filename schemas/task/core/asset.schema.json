@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "core/asset.schema.json",
+  "title": "Static image asset",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["path"],
+  "properties": {
+    "path": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^.+\\.(svg|png|jpg|jpeg|webp)$"
+    },
+    "caption": {
+      "type": ["string", "null"],
+      "default": null
+    },
+    "width": {
+      "type": "string",
+      "default": "0.8\\linewidth"
+    },
+    "placement_mode": {
+      "type": "string",
+      "enum": ["flow"],
+      "default": "flow"
+    },
+    "placement": {
+      "type": "string",
+      "enum": ["below_statement", "right_of_statement", "below_part_text", "inline"],
+      "default": "below_statement"
+    },
+    "column": {
+      "type": "string",
+      "enum": ["full", "left", "right"],
+      "default": "full",
+      "description": "Use left/right for two-column matching layouts. full uses full available width."
+    },
+    "column_group": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Assets with same group can be rendered as a single two-column block."
+    },
+    "order": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Optional explicit order inside the placement/group."
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "placement": { "const": "right_of_statement" } } },
+      "then": { "properties": { "column": { "const": "right" } } }
+    }
+  ]
+}

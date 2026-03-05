@@ -1,0 +1,158 @@
+{
+  "$schema": "task.schema.json",
+  "id": "workspace_deep_test",
+  "name": "Workspace Deep Test",
+  "subject": "Mathematik",
+  "topic": "Workspace Rendering",
+  "points": 0,
+  "statement": "Manueller Test fuer workspace_latex: verschiedene Grid-/Blank-/Coord-Parameter, Grenzwerte und Kombinationen.",
+  "parts": [
+    {
+      "id": "g_default",
+      "text": "Grid default (grid-typ nicht gesetzt, erwartet karo_5mm), height_cm=4",
+      "points": 0,
+      "workspace": [
+        { "type": "grid", "height_cm": 4 }
+      ]
+    },
+    {
+      "id": "g_5mm_small",
+      "text": "Grid karo_5mm, height_cm=2",
+      "points": 0,
+      "workspace": [
+        { "type": "grid", "height_cm": 2, "grid": "karo_5mm" }
+      ]
+    },
+    {
+      "id": "g_1cm_medium",
+      "text": "Grid karo_1cm, height_cm=5",
+      "points": 0,
+      "workspace": [
+        { "type": "grid", "height_cm": 5, "grid": "karo_1cm" }
+      ]
+    },
+    {
+      "id": "g_mm_dense",
+      "text": "Grid millimeter, height_cm=3",
+      "points": 0,
+      "workspace": [
+        { "type": "grid", "height_cm": 3, "grid": "millimeter" }
+      ]
+    },
+    {
+      "id": "g_height_zero",
+      "text": "Grid Grenzfall unten: height_cm=0 (Renderer sollte auf 0.5 clampen)",
+      "points": 0,
+      "workspace": [
+        { "type": "grid", "height_cm": 0, "grid": "karo_5mm" }
+      ]
+    },
+    {
+      "id": "g_height_large",
+      "text": "Grid Grenzfall oben: height_cm=30 (Renderer sollte auf 25 clampen)",
+      "points": 0,
+      "workspace": [
+        { "type": "grid", "height_cm": 30, "grid": "karo_5mm" }
+      ]
+    },
+    {
+      "id": "blank_std",
+      "text": "Blank normal: height_cm=3",
+      "points": 0,
+      "workspace": [
+        { "type": "blank", "height_cm": 3 }
+      ]
+    },
+    {
+      "id": "blank_zero",
+      "text": "Blank Grenzfall unten: height_cm=0 (Renderer sollte auf 0.5 clampen)",
+      "points": 0,
+      "workspace": [
+        { "type": "blank", "height_cm": 0 }
+      ]
+    },
+    {
+      "id": "blank_large",
+      "text": "Blank Grenzfall oben: height_cm=30 (Renderer sollte auf 25 clampen)",
+      "points": 0,
+      "workspace": [
+        { "type": "blank", "height_cm": 30 }
+      ]
+    },
+    {
+      "id": "coord_default_grid",
+      "text": "Coord basic mit Defaults (grid/unit_cm nicht gesetzt), x/y mit Null im Bereich",
+      "points": 0,
+      "workspace": [
+        { "type": "coord_grid", "xmin": -6, "xmax": 6, "ymin": -2, "ymax": 7 }
+      ]
+    },
+    {
+      "id": "coord_mm",
+      "text": "Coord mit millimeter-grid und unit_cm=0.5",
+      "points": 0,
+      "workspace": [
+        { "type": "coord_grid", "xmin": -4, "xmax": 8, "ymin": -3, "ymax": 5, "unit_cm": 0.5, "grid": "millimeter" }
+      ]
+    },
+    {
+      "id": "coord_1cm",
+      "text": "Coord mit karo_1cm und unit_cm=1.2",
+      "points": 0,
+      "workspace": [
+        { "type": "coord_grid", "xmin": -5, "xmax": 5, "ymin": -5, "ymax": 5, "unit_cm": 1.2, "grid": "karo_1cm" }
+      ]
+    },
+    {
+      "id": "coord_no_zero",
+      "text": "Coord ohne Nullpunkt im sichtbaren Bereich (keine Achsenlabels erwartet)",
+      "points": 0,
+      "workspace": [
+        { "type": "coord_grid", "xmin": 2, "xmax": 9, "ymin": 3, "ymax": 10, "unit_cm": 1.0, "grid": "karo_5mm" }
+      ]
+    },
+    {
+      "id": "coord_inverted",
+      "text": "Coord invertierte Grenzen (xmax<xmin, ymax<ymin), Renderer sollte automatisch korrigieren",
+      "points": 0,
+      "workspace": [
+        { "type": "coord_grid", "xmin": 5, "xmax": 2, "ymin": 4, "ymax": 1, "unit_cm": 1.0, "grid": "karo_5mm" }
+      ]
+    },
+    {
+      "id": "coord_unit_low",
+      "text": "Coord unit_cm sehr klein: 0.05 (Renderer clamp auf 0.1)",
+      "points": 0,
+      "workspace": [
+        { "type": "coord_grid", "xmin": -3, "xmax": 3, "ymin": -3, "ymax": 3, "unit_cm": 0.05, "grid": "karo_5mm" }
+      ]
+    },
+    {
+      "id": "coord_unit_high",
+      "text": "Coord unit_cm sehr gross: 5.0 (Renderer clamp auf 3.0)",
+      "points": 0,
+      "workspace": [
+        { "type": "coord_grid", "xmin": -2, "xmax": 2, "ymin": -1, "ymax": 3, "unit_cm": 5.0, "grid": "karo_5mm" }
+      ]
+    },
+    {
+      "id": "combo_stack",
+      "text": "Kombination in einem Part: erst blank, dann grid, dann coord",
+      "points": 0,
+      "workspace": [
+        { "type": "blank", "height_cm": 1.5 },
+        { "type": "grid", "height_cm": 3, "grid": "karo_5mm" },
+        { "type": "coord_grid", "xmin": -3, "xmax": 4, "ymin": -2, "ymax": 4, "unit_cm": 0.8, "grid": "karo_5mm" }
+      ]
+    },
+    {
+      "id": "legacy_lines",
+      "text": "Legacy lines-block (Rueckwaertskompatibilitaet), lines=6",
+      "points": 0,
+      "workspace": [
+        { "type": "lines", "lines": 6 }
+      ]
+    }
+  ],
+  "version": "1.0"
+}

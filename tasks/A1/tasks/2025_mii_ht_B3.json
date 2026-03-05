@@ -1,0 +1,106 @@
+{
+  "$schema": "task.schema.json",
+  "id": "2025_mii_ht_b3",
+  "name": "Trapez",
+  "subject": "Mathematik",
+  "topic": "Geometrie",
+  "tags": [
+    "abschlussprÃ¼fung",
+    "realschule",
+    "bayern",
+    "2025",
+    "geometrie",
+    "trapez",
+    "trigonometrie"
+  ],
+  "points": 15.5,
+  "statement": "Nebenstehende Skizze zeigt das Trapez ABCD mit AB âˆ¥ CD und der HÃ¶he DE. Es gilt: |AB| = 12 cm; |BC| = 10 cm; âˆ CBA = 65Â°; âˆ DBA = 40Â°. Runden Sie im Folgenden auf zwei Stellen nach dem Komma.",
+  "assets": [
+    {
+      "path": "assets/B3_trapez.png",
+      "caption": null,
+      "width": "0.5\\linewidth",
+      "placement": "below_statement",
+      "column": "full"
+    }
+  ],
+  "parts": [
+    {
+      "id": "b3_1",
+      "text": "Zeichnen Sie das Trapez ABCD sowie die Diagonale BD und die HÃ¶he DE. BegrÃ¼nden Sie sodann, warum fÃ¼r das MaÃŸ des Winkels DCB gilt: âˆ DCB = 115Â°.",
+      "points": 3,
+      "workspace": [
+        {
+          "type": "grid",
+          "height_cm": 6.0,
+          "grid": "karo_5mm"
+        }
+      ]
+    },
+    {
+      "id": "b3_2",
+      "text": "Ermitteln Sie rechnerisch die LÃ¤ngen der Strecken CD und BD. (Ergebnisse: |CD| = 6,57 cm; |BD| = 14,10 cm)",
+      "points": 3,
+      "workspace": [
+        {
+          "type": "grid",
+          "height_cm": 5,
+          "grid": "karo_5mm"
+        }
+      ]
+    },
+    {
+      "id": "b3_3",
+      "text": "Berechnen Sie die LÃ¤nge der Strecke DE und den FlÃ¤cheninhalt des Trapezes ABCD. (Teilergebnis: A_ABCD = 84,12 cmÂ²)",
+      "points": 2,
+      "workspace": [
+        {
+          "type": "grid",
+          "height_cm": 5,
+          "grid": "karo_5mm"
+        }
+      ]
+    },
+    {
+      "id": "b3_4",
+      "text": "Punkte Gâ‚™ liegen auf der Strecke BC mit |CGâ‚™| = x cm (x âˆˆ â„; 0 â‰¤ x < 10). Kreise mit dem Mittelpunkt B und den Radien râ‚™ = |BGâ‚™| schneiden die Strecke AB in Punkten Hâ‚™.\nZeichnen Sie fÃ¼r x = 2 den Punkt Gâ‚ sowie den zugehÃ¶rigen Kreisbogen Gâ‚Hâ‚ mit dem Mittelpunkt B in die Zeichnung zu B3.1 ein. BegrÃ¼nden Sie sodann, weshalb der Punkt E auf keinem der KreisbÃ¶gen Gâ‚™Hâ‚™ liegt.",
+      "points": 3,
+      "workspace": [
+        {
+          "type": "grid",
+          "height_cm": 5,
+          "grid": "karo_5mm"
+        }
+      ]
+    },
+    {
+      "id": "b3_5",
+      "text": "Durch die Strecken BGâ‚™ und BHâ‚™ sowie die KreisbÃ¶gen Gâ‚™Hâ‚™ werden Kreissektoren begrenzt. Zeigen Sie, dass fÃ¼r den FlÃ¤cheninhalt dieser Kreissektoren in AbhÃ¤ngigkeit von x gilt: A(x) = (0,57xÂ² âˆ’ 11,34x + 56,72) cmÂ².",
+      "points": 2,
+      "workspace": [
+        {
+          "type": "grid",
+          "height_cm": 5,
+          "grid": "karo_5mm"
+        }
+      ]
+    },
+    {
+      "id": "b3_6",
+      "text": "Berechnen Sie, fÃ¼r welche Belegung von x der FlÃ¤cheninhalt des zugehÃ¶rigen Kreissektors halb so groÃŸ wie der FlÃ¤cheninhalt des Trapezes ABCD ist.",
+      "points": 2.5,
+      "workspace": [
+        {
+          "type": "grid",
+          "height_cm": 5,
+          "grid": "karo_5mm"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "ref": "AbschlussprÃ¼fung 2025 an den Realschulen in Bayern â€“ Mathematik II â€“ Haupttermin (PDF)",
+    "notes": "Aufgabengruppe B, Aufgabe B3 (Seite 9)"
+  },
+  "version": "1.0"
+}

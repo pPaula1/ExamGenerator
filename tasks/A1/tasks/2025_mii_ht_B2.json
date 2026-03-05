@@ -1,0 +1,72 @@
+{
+  "$schema": "task.schema.json",
+  "id": "2025_mii_ht_b2",
+  "name": "Exponentielles Wachstum (Staatsverschuldung)",
+  "subject": "Mathematik",
+  "topic": "Exponentielle Funktionen",
+  "tags": [
+    "abschlussprÃ¼fung",
+    "realschule",
+    "bayern",
+    "2025",
+    "exponentialfunktion",
+    "wachstum"
+  ],
+  "points": 6,
+  "statement": "Die Staatsverschuldung eines Landes A lag am 01.01.2025 bei 1600 Milliarden Euro. Man nimmt an, dass die Entwicklung der Staatsverschuldung nÃ¤herungsweise mithilfe der Funktion f: y = 1600 Â· 1,03^x (x,y âˆˆ â„â‚€âº) dargestellt werden kann. Dabei gibt x die Anzahl der Jahre seit dem 01.01.2025 und y die Staatsverschuldung in Milliarden Euro an. Runden Sie im Folgenden auf Ganze.",
+  "parts": [
+    {
+      "id": "b2_1",
+      "text": "Geben Sie an, um wie viel Prozent die Staatsverschuldung entsprechend der Funktion f jÃ¤hrlich zunimmt.",
+      "points": 1,
+      "workspace": [
+        {
+          "type": "grid",
+          "height_cm": 5,
+          "grid": "karo_5mm"
+        }
+      ]
+    },
+    {
+      "id": "b2_2",
+      "text": "Berechnen Sie die Staatsverschuldung laut der Funktion f am 01.01.2045.",
+      "points": 2,
+      "workspace": [
+        {
+          "type": "grid",
+          "height_cm": 5,
+          "grid": "karo_5mm"
+        }
+      ]
+    },
+    {
+      "id": "b2_3",
+      "text": "Berechnen Sie, nach wie vielen Jahren sich die Staatsverschuldung im Vergleich zum 01.01.2025 laut der Funktion f erstmals vervierfacht haben wird.",
+      "points": 2,
+      "workspace": [
+        {
+          "type": "grid",
+          "height_cm": 5,
+          "grid": "karo_5mm"
+        }
+      ]
+    },
+    {
+      "id": "b2_4",
+      "text": "Die Staatsverschuldung des Landes B war am 01.01.2025 halb so groÃŸ wie die des Landes A, es wird aber die gleiche jÃ¤hrliche prozentuale Zunahme angenommen. Kreuzen Sie die Aussage an, die laut der Annahmen fÃ¼r den 01.01.2032 zutrifft.\nâ–¡ weniger als halb so groÃŸ\nâ–¡ immer noch halb so groÃŸ\nâ–¡ mehr als halb so groÃŸ\nâ–¡ keine der vorherigen Aussagen trifft zu",
+      "points": 1,
+      "workspace": [
+        {
+          "type": "grid",
+          "height_cm": 5,
+          "grid": "karo_5mm"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "ref": "AbschlussprÃ¼fung 2025 an den Realschulen in Bayern â€“ Mathematik II â€“ Haupttermin (PDF)",
+    "notes": "Aufgabengruppe B, Aufgabe B2 (Seite 7)"
+  },
+  "version": "1.0"
+}

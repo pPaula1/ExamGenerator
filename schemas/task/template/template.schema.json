@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "template/template.schema.json",
+  "title": "Task template",
+  "type": "object",
+  "additionalProperties": false,
+  "default": {},
+  "properties": {
+    "engine": {
+      "type": "string",
+      "enum": ["mustache", "handlebars", "custom"],
+      "default": "mustache"
+    },
+    "variables": {
+      "type": "object",
+      "additionalProperties": { "$ref": "./variable.schema.json" },
+      "default": {}
+    },
+    "constraints": {
+      "type": "array",
+      "items": { "$ref": "./constraint.schema.json" },
+      "default": []
+    }
+  }
+}

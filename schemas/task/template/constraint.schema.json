@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "template/constraint.schema.json",
+  "title": "Template constraint",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["expr"],
+  "properties": {
+    "expr": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Boolean expression, e.g. a > b"
+    },
+    "message": { "type": "string" }
+  }
+}

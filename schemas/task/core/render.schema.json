@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "core/render.schema.json",
+  "title": "Render options",
+  "type": "object",
+  "additionalProperties": false,
+  "default": {},
+  "properties": {
+    "page_break_before": {
+      "type": "boolean",
+      "default": false
+    },
+    "scale": {
+      "type": "number",
+      "minimum": 0.1,
+      "maximum": 2.0,
+      "default": 1.0
+    }
+  }
+}

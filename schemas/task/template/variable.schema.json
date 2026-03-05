@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "template/variable.schema.json",
+  "title": "Template variable",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["type", "default"],
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": ["number", "int", "choice", "string"]
+    },
+    "default": {
+      "type": ["string", "number", "integer", "boolean", "null"],
+      "description": "Default value used when no explicit value is provided."
+    },
+    "min": { "type": "number" },
+    "max": { "type": "number" },
+    "choices": {
+      "type": "array",
+      "items": {
+        "type": ["string", "number", "integer", "boolean"]
+      },
+      "minItems": 1
+    },
+    "expr": {
+      "type": "string",
+      "description": "Optional expression for derived values."
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "type": { "const": "number" } } },
+      "then": { "properties": { "default": { "type": "number" } } }
+    },
+    {
+      "if": { "properties": { "type": { "const": "int" } } },
+      "then": { "properties": { "default": { "type": "integer" } } }
+    },
+    {
+      "if": { "properties": { "type": { "const": "string" } } },
+      "then": { "properties": { "default": { "type": "string" } } }
+    },
+    {
+      "if": { "properties": { "type": { "const": "choice" } } },
+      "then": {
+        "required": ["choices"],
+        "properties": {
+          "default": { "type": ["string", "number", "integer", "boolean"] }
+        }
+      }
+    }
+  ]
+}

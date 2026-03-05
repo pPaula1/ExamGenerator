@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "core/workspace.schema.json",
+  "title": "Workspace block",
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "lines"],
+      "properties": {
+        "type": { "const": "lines" },
+        "lines": { "type": "integer", "minimum": 1, "maximum": 60 }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "height_cm"],
+      "properties": {
+        "type": { "const": "blank" },
+        "height_cm": { "type": "number", "minimum": 0 }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "height_cm"],
+      "properties": {
+        "type": { "const": "grid" },
+        "height_cm": { "type": "number", "minimum": 0 },
+        "grid": {
+          "type": "string",
+          "enum": ["karo_5mm", "karo_1cm", "millimeter"],
+          "default": "karo_5mm"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "xmin", "xmax", "ymin", "ymax"],
+      "properties": {
+        "type": { "const": "coord_grid" },
+        "xmin": { "type": "number" },
+        "xmax": { "type": "number" },
+        "ymin": { "type": "number" },
+        "ymax": { "type": "number" },
+        "unit_cm": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "default": 1.0
+        },
+        "grid": {
+          "type": "string",
+          "enum": ["karo_5mm", "karo_1cm", "millimeter"],
+          "default": "karo_5mm"
+        }
+      }
+    }
+  ]
+}

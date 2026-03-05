@@ -23,14 +23,42 @@ def _grid_step_cfg(grid_name: str) -> tuple[float, float]:
     return 0.5, 1.0
 
 
+def _center_workspace_block(tex: str) -> str:
+    # Default centering for normal (non-list) contexts.
+    return (
+        r"\par\noindent"
+        + "\n"
+        + r"\begin{minipage}{\textwidth}\centering"
+        + "\n"
+        + tex
+        + "\n"
+        + r"\end{minipage}\par"
+    )
+
+
+def _center_workspace_block_in_list(tex: str) -> str:
+    # In list items, compensate the item indentation first.
+    return (
+        r"\par\noindent\hspace*{-\leftmargin}"
+        + "\n"
+        + r"\begin{minipage}{\textwidth}\centering"
+        + "\n"
+        + tex
+        + "\n"
+        + r"\end{minipage}\par"
+    )
+
+
 def render_workspace_blocks(
     workspace: list[dict[str, Any]],
     latex_escape: Callable[[str], str],
+    in_list_item: bool = False,
 ) -> str:
     if not workspace:
         return ""
 
     blocks: list[str] = []
+    wrap = _center_workspace_block_in_list if in_list_item else _center_workspace_block
     for w in workspace:
         wtype = str(w.get("type", "")).strip()
         if wtype == "lines":
@@ -42,7 +70,7 @@ def render_workspace_blocks(
             lines = []
             for _ in range(n):
                 lines.append(r"\noindent\rule{\linewidth}{0.4pt}\\[0.45em]")
-            blocks.append("\n".join(lines))
+            blocks.append(wrap("\n".join(lines)))
             continue
 
         if wtype in ("blank", "grid"):
@@ -61,7 +89,7 @@ def render_workspace_blocks(
             grid_name = str(w.get("grid", "karo_5mm"))
             step_cm, major_step_cm = _grid_step_cfg(grid_name)
 
-            blocks.append(
+            blocks.append(wrap(
                 r"\begin{tikzpicture}[x=1cm,y=1cm]" + "\n" +
                 rf"\def\GridW{{{GRID_WIDTH_CM:.1f}}}" + "\n" +
                 rf"\def\GridH{{{h:.2f}}}" + "\n" +
@@ -69,7 +97,7 @@ def render_workspace_blocks(
                 rf"\draw[step={major_step_cm:.3f}cm, line width=0.20pt, color=gray!75] (0,0) grid (\GridW,\GridH);" + "\n" +
                 r"\draw[line width=0.35pt, color=black!70] (0,0) rectangle (\GridW,\GridH);" + "\n" +
                 r"\end{tikzpicture}"
-            )
+            ))
             continue
 
         if wtype == "coord_grid":
@@ -110,7 +138,7 @@ def render_workspace_blocks(
                 axis_labels += rf"\node[anchor=west, font=\small] at ({x_label_x:.3f},{x_label_y:.3f}) {{x}};" + "\n"
                 axis_labels += rf"\node[anchor=south, font=\small] at ({y_label_x:.3f},{y_label_y:.3f}) {{y}};" + "\n"
 
-            blocks.append(
+            blocks.append(wrap(
                 r"\begin{tikzpicture}[x=1cm,y=1cm]" + "\n" +
                 rf"\def\GridW{{{width_cm:.3f}}}" + "\n" +
                 rf"\def\GridH{{{height_cm:.3f}}}" + "\n" +
@@ -119,7 +147,7 @@ def render_workspace_blocks(
                 r"\draw[line width=0.35pt, color=black!70] (0,0) rectangle (\GridW,\GridH);" + "\n" +
                 x_axis + y_axis + origin + axis_labels +
                 r"\end{tikzpicture}"
-            )
+            ))
             continue
 
         # Unknown workspace type: keep visible note instead of dropping it silently.

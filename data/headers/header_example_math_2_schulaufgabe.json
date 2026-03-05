@@ -1,0 +1,22 @@
+{
+  "$schema": "../../schemas/header/header.schema.json",
+  "id": "header_math_2_schulaufgabe_10b2",
+  "title": "2. Schulaufgabe aus der Mathematik II",
+  "school_name": "Staatliche Realschule für Knaben Neumarkt/OPf.",
+  "class_name": "10B2",
+  "subject": "Mathematik II",
+  "allowed_materials": "Taschenrechner, Formelsammlung",
+  "show_nta_measures": true,
+  "show_time_bonus_percent": true,
+  "teacher": "Kastner",
+  "date": "06.02.2024",
+  "duration_min": 60,
+  "school_info_ref": "../schools/KRSNm/realschule_knaben_neumarkt_opf.school_info.json",
+  "layout": {
+    "show_logo": true,
+    "show_border": true,
+    "header_height_cm": 4.0,
+    "logo_width_cm": 2.8
+  },
+  "version": "1.0"
+}

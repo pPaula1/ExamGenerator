@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "school/school_info.schema.json",
+  "title": "School Information",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_-]{2,64}$"
+    },
+    "name": { "type": "string", "minLength": 1, "maxLength": 200 },
+    "short_name": { "type": "string" },
+    "address": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "street": { "type": "string" },
+        "postal_code": { "type": "string" },
+        "city": { "type": "string" },
+        "state": { "type": "string" },
+        "country": { "type": "string" }
+      }
+    },
+    "contact": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "website": { "type": "string" }
+      }
+    },
+    "logo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "width_cm": { "type": "number", "minimum": 0.5, "default": 3.0 },
+        "height_cm": { "type": "number", "minimum": 0.5 }
+      }
+    },
+    "default_header": {
+      "oneOf": [
+        { "$ref": "../header/header.schema.json" },
+        { "type": "string" }
+      ],
+      "description": "Inline header config or reference to header JSON file."
+    },
+    "defaults": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "subject": { "type": "string" },
+        "class_name": { "type": "string" },
+        "teacher": { "type": "string" },
+        "exam_title_prefix": { "type": "string" }
+      }
+    },
+    "version": { "type": "string", "default": "1.0" }
+  }
+}

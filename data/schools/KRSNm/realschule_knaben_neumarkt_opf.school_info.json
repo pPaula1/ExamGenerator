@@ -1,0 +1,29 @@
+{
+  "$schema": "../schemas/school/school_info.schema.json",
+  "id": "rs_knaben_neumarkt_opf",
+  "name": "Staatliche Realschule für Knaben Neumarkt/OPf.",
+  "short_name": "RS Knaben Neumarkt",
+  "address": {
+    "street": "",
+    "postal_code": "",
+    "city": "Neumarkt i.d.OPf.",
+    "state": "Bayern",
+    "country": "Deutschland"
+  },
+  "contact": {
+    "phone": "",
+    "email": "",
+    "website": ""
+  },
+  "logo": {
+    "path": "logo.png",
+    "width_cm": 3.0
+  },
+  "defaults": {
+    "exam_title_prefix": "Schulaufgabe",
+    "teacher": "",
+    "class_name": "",
+    "subject": ""
+  },
+  "version": "1.0"
+}

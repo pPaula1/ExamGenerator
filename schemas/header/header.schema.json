@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "header/header.schema.json",
+  "title": "Exam Header",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_-]{2,64}$"
+    },
+    "title": { "type": "string", "minLength": 1, "maxLength": 200 },
+    "subtitle": { "type": "string" },
+    "school_name": { "type": "string" },
+    "class_name": { "type": "string" },
+    "subject": { "type": "string" },
+    "allowed_materials": {
+      "type": "string",
+      "description": "Allowed aids/materials for the exam header."
+    },
+    "show_nta_measures": {
+      "type": "boolean",
+      "default": false,
+      "description": "Show NTA measures request block in header."
+    },
+    "show_time_bonus_percent": {
+      "type": "boolean",
+      "default": false,
+      "description": "Show time bonus percent request block in header."
+    },
+    "teacher": { "type": "string" },
+    "date": { "type": "string" },
+    "duration_min": { "type": "integer", "minimum": 1 },
+    "logo_path": { "type": "string" },
+    "school_info_ref": {
+      "type": "string",
+      "description": "Path or identifier to school_info.json."
+    },
+    "left_lines": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "default": []
+    },
+    "right_lines": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "default": []
+    },
+    "layout": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "show_logo": { "type": "boolean", "default": true },
+        "show_border": { "type": "boolean", "default": true },
+        "header_height_cm": { "type": "number", "minimum": 1, "default": 4.0 },
+        "logo_width_cm": { "type": "number", "minimum": 1, "default": 3.0 }
+      }
+    },
+    "version": { "type": "string", "default": "1.0" }
+  }
+}

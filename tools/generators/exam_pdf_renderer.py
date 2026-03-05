@@ -1,10 +1,10 @@
 ﻿#!/usr/bin/env python3
-"""Backward-compatible wrapper for moved renderer script."""
+"""Backward-compatible alias. Use ../renderers/task_pdf_renderer.py."""
 from pathlib import Path
 import runpy
 import sys
 
-TARGET = Path(__file__).resolve().parent / "tools" / "renderers" / "task_pdf_renderer.py"
+TARGET = Path(__file__).resolve().parent.parent / "renderers" / "task_pdf_renderer.py"
 if not TARGET.exists():
     raise SystemExit(f"Missing target script: {TARGET}")
 

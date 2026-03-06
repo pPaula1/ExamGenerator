@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "core/textbox.schema.json",
+  "title": "Textbox Block",
+  "description": "Additional content block inside a part. Supports plain text or formula.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["type"],
+  "properties": {
+    "id": { "$ref": "../shared/common.schema.json#/$defs/partId" },
+    "type": {
+      "type": "string",
+      "enum": ["text", "formula"]
+    },
+    "text": { "type": "string", "minLength": 1 },
+    "formula": { "type": "string", "minLength": 1 },
+    "align": {
+      "type": "string",
+      "enum": ["left", "center", "right"],
+      "default": "left"
+    },
+    "boxed": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "required": ["type"],
+        "properties": {
+          "type": { "const": "text" }
+        }
+      },
+      "then": { "required": ["text"] }
+    },
+    {
+      "if": {
+        "required": ["type"],
+        "properties": {
+          "type": { "const": "formula" }
+        }
+      },
+      "then": { "required": ["formula"] }
+    }
+  ]
+}

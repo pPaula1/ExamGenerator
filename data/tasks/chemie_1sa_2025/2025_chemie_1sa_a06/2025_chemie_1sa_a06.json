@@ -1,0 +1,43 @@
+{
+  "$schema": "task.schema.json",
+  "id": "2025_chemie_1sa_a06",
+  "name": "Natrium und Chlorgas",
+  "subject": "Chemie",
+  "topic": "Reaktion von Metallen mit Nichtmetallen",
+  "tags": [
+    "schulaufgabe",
+    "chemie",
+    "klasse10",
+    "elektronen-protonenuebergaenge",
+    "2025",
+    "auto-import"
+  ],
+  "points": 2,
+  "statement": "Natrium reagiert mit Chlorgas.",
+  "parts": [
+    {
+      "id": "a",
+      "text": "Erkläre mithilfe des Kugelwolkenmodells, warum es bei der Reaktion eines Natriumatoms und eines Chloratoms nicht zu einer Molekülbildung kommt.",
+      "points": 2,
+      "assets": [
+        {
+          "path": "assets/na_cl_modell.png",
+          "caption": "Natriumatom und Chloratom (Modell)",
+          "width": "0.6\\linewidth",
+          "placement": "right_of_statement",
+          "column": "full"
+        }
+      ],
+      "workspace": [
+        {
+          "type": "lines",
+          "lines": 4
+        }
+      ]
+    }
+  ],
+  "source": {
+    "ref": "1_SA_Elektronen-und Protonenuebergaenge.pdf"
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "task.schema.json",
+  "id": "2025_chemie_1sa_a07",
+  "name": "Aussagen zu Elektronenübertragungen",
+  "subject": "Chemie",
+  "topic": "Ionenbindung",
+  "tags": [
+    "schulaufgabe",
+    "chemie",
+    "klasse10",
+    "elektronen-protonenuebergaenge",
+    "2025",
+    "auto-import"
+  ],
+  "points": 3,
+  "statement": "Kreuze die richtigen Aussagen an und verbessere die Falschaussagen.",
+  "parts": [
+    {
+      "id": "a",
+      "type": "table",
+      "table": {
+        "headers": ["Aussage", "richtig", "Verbesserung"],
+        "rows": [
+          ["Nichtmetalle können Elektronen aufnehmen", "", ""],
+          ["Bei der Reaktion von Metallen mit Nichtmetallen kommt es zu einem Elektronenverlust", "", ""],
+          ["Metalle sind Elektronendonatoren", "", ""],
+          ["Elektronendonatoren nehmen Elektronen auf", "", ""]
+        ],
+        "align": ["center"],
+        "column_widths_cm": [5.0, 2.0, 7.0]
+      },
+      "points": 3
+    }
+  ],
+  "source": {
+    "ref": "1_SA_Elektronen-und Protonenuebergaenge.pdf",
+    "notes": "Aufgabe 7, Seite 3. Automatisch aus PDF extrahiert, bitte inhaltlich prüfen."
+  },
+  "version": "1.0"
+}

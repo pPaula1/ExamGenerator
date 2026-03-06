@@ -12,6 +12,8 @@ import subprocess
 from pathlib import Path
 from typing import Any
 
+from schema_utils import validate_instance
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
@@ -340,6 +342,7 @@ def main() -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
 
     data = load_json(header_file)
+    validate_instance(data, "header", label=str(header_file))
     tex_content = build_header_tex(header_file, data, str(args.points_total))
     tex_file = out_dir / f"{args.name}.tex"
     tex_file.write_text(tex_content, encoding="utf-8")

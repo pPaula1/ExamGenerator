@@ -1,0 +1,25 @@
+{
+  "$schema": "../schemas/exam/exam.schema.json",
+  "id": "exam_all_tasks_example",
+  "name": "Beispielprüfung - alle Tasks",
+  "subtitle": "Automatisch aus tasks gesammelt",
+  "header": "../headers/header_example_math_2_schulaufgabe.json",
+  "school_info_ref": "../schools/KRSNm/realschule_knaben_neumarkt_opf.school_info.json",
+  "tasks": [
+    "../tasks/A1/2025_mii_ht_A1/2025_mii_ht_A1.json",
+    "../tasks/A1/2025_mii_ht_A2/2025_mii_ht_A2.json",
+    "../tasks/A1/2025_mii_ht_A3/2025_mii_ht_A3.json",
+    "../tasks/A1/2025_mii_ht_A4/2025_mii_ht_A4.json",
+    "../tasks/A1/2025_mii_ht_B1/2025_mii_ht_B1.json",
+    "../tasks/A1/2025_mii_ht_B2/2025_mii_ht_B2.json",
+    "../tasks/A1/2025_mii_ht_B3/2025_mii_ht_B3.json",
+    "../tasks/A1/2025_mii_ht_B4/2025_mii_ht_B4.json"
+  ],
+  "render": {
+    "title_page": false,
+    "page_break_between_tasks": true,
+    "show_total_points": true,
+    "font_family": "default"
+  },
+  "version": "1.0"
+}

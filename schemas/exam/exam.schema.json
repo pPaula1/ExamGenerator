@@ -54,7 +54,13 @@
       "properties": {
         "title_page": { "type": "boolean", "default": false },
         "page_break_between_tasks": { "type": "boolean", "default": false },
-        "show_total_points": { "type": "boolean", "default": true }
+        "show_total_points": { "type": "boolean", "default": true },
+        "font_family": {
+          "type": "string",
+          "enum": ["default", "latin-modern", "times"],
+          "default": "times",
+          "description": "Font preset for exam rendering."
+        }
       }
     },
     "meta": {

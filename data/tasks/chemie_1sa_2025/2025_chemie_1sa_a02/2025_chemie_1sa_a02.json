@@ -1,0 +1,61 @@
+{
+  "$schema": "task.schema.json",
+  "id": "2025_chemie_1sa_a02",
+  "name": "Saure und alkalische L\u00f6sungen - Aussagen",
+  "subject": "Chemie",
+  "topic": "Saeure-Base",
+  "tags": [
+    "schulaufgabe",
+    "chemie",
+    "klasse10",
+    "elektronen-protonenuebergaenge",
+    "2025",
+    "auto-import"
+  ],
+  "points": 1.5,
+  "statement": "Kreuze an, welche Aussagen auf den Rohrreiniger zutreffen:",
+  "parts": [
+    {
+      "id": "a",
+      "type": "checkbox_group",
+      "checkbox_items": [
+        {
+          "id": "a1",
+          "text": "Gesundheitssch\u00e4dlich beim Verschlucken."
+        },
+        {
+          "id": "a2",
+          "text": "Die Atmosph\u00e4re wird gesch\u00e4digt."
+        },
+        {
+          "id": "a3",
+          "text": "Bei Verschlucken Erbrechen herbeif\u00fchren."
+        },
+        {
+          "id": "a4",
+          "text": "Es ist nur ein Reinigungsmittel und deshalb sind keine Gefahrenhinweise n\u00f6tig."
+        },
+        {
+          "id": "a5",
+          "text": "Schutzbrille und Schutzhandschuhe tragen."
+        },
+        {
+          "id": "a6",
+          "text": "Hautkontakt vermeiden."
+        },
+        {
+          "id": "a7",
+          "text": "Gasmaske tragen."
+        },
+        {
+          "id": "a8",
+          "text": "Z\u00fcndquellen vermeiden."
+        }
+      ]
+    }
+  ],
+  "source": {
+    "ref": "1_SA_Elektronen-und Protonenuebergaenge.pdf"
+  },
+  "version": "1.0"
+}

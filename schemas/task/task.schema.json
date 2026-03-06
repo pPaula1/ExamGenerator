@@ -35,10 +35,36 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["id", "text"],
+        "required": ["id"],
         "properties": {
           "id": { "$ref": "./shared/common.schema.json#/$defs/partId" },
+          "type": {
+            "type": "string",
+            "enum": ["text", "checkbox_group", "matching", "table"],
+            "default": "text",
+            "description": "Use checkbox_group for Kreuzaufgaben, matching for Zuordnungsaufgaben and table for tabular tasks."
+          },
           "text": { "type": "string", "minLength": 1 },
+          "checkbox_items": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "$ref": "./core/checkbox_item.schema.json" },
+            "description": "Checkbox lines shown as: free box + statement text."
+          },
+          "matching": {
+            "$ref": "./core/matching_group.schema.json",
+            "description": "Matching task with left_items and right_items."
+          },
+          "table": {
+            "$ref": "./core/table.schema.json",
+            "description": "Table task content with headers, rows and optional layout hints."
+          },
+          "textboxes": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "$ref": "./core/textbox.schema.json" },
+            "description": "Additional blocks below part text. Each block can be text or formula."
+          },
           "points": { "$ref": "./shared/common.schema.json#/$defs/nonNegativeNumber" },
           "assets": {
             "type": "array",
@@ -50,7 +76,52 @@
             "items": { "$ref": "./core/workspace.schema.json" },
             "default": []
           }
-        }
+        },
+        "anyOf": [
+          { "required": ["text"] },
+          { "required": ["checkbox_items"] },
+          { "required": ["matching"] },
+          { "required": ["table"] },
+          { "required": ["textboxes"] }
+        ],
+        "allOf": [
+          {
+            "if": {
+              "required": ["type"],
+              "properties": {
+                "type": { "const": "text" }
+              }
+            },
+            "then": { "required": ["text"] }
+          },
+          {
+            "if": {
+              "required": ["type"],
+              "properties": {
+                "type": { "const": "checkbox_group" }
+              }
+            },
+            "then": { "required": ["checkbox_items"] }
+          },
+          {
+            "if": {
+              "required": ["type"],
+              "properties": {
+                "type": { "const": "matching" }
+              }
+            },
+            "then": { "required": ["matching"] }
+          },
+          {
+            "if": {
+              "required": ["type"],
+              "properties": {
+                "type": { "const": "table" }
+              }
+            },
+            "then": { "required": ["table"] }
+          }
+        ]
       }
     },
     "workspace": {

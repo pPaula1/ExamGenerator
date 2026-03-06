@@ -1,0 +1,29 @@
+{
+  "$schema": "task.schema.json",
+  "id": "2025_chemie_1sa_a08",
+  "name": "Calcium und Brom - Teilgleichungen",
+  "subject": "Chemie",
+  "topic": "Ionenbindung",
+  "tags": [
+    "schulaufgabe",
+    "chemie",
+    "klasse10",
+    "elektronen-protonenuebergaenge",
+    "2025",
+    "auto-import"
+  ],
+  "points": 6,
+  "statement": "Stelle die Teilgleichungen und die Gesamtgleichung in Formeln für die Reaktion von Calcium mit Brom auf. Beschrifte die jeweiligen Zeilen mit Fachbegriffen (ganzer Begriff).",
+  "parts": [],
+  "workspace": [
+    {
+      "type": "grid",
+      "height_cm": 9,
+      "grid": "karo_5mm"
+    }
+  ],
+  "source": {
+    "ref": "1_SA_Elektronen-und Protonenuebergaenge.pdf"
+  },
+  "version": "1.0"
+}

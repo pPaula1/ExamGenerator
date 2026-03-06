@@ -12,6 +12,7 @@ from typing import Any, Callable
 
 
 GRID_WIDTH_CM = 17.0  # With A4 and 2cm margins this matches \textwidth exactly.
+LINE_SPACING_CM = 1.0
 
 
 def _grid_step_cfg(grid_name: str) -> tuple[float, float]:
@@ -68,8 +69,11 @@ def render_workspace_blocks(
                 n = 4
             n = max(1, min(n, 60))
             lines = []
-            for _ in range(n):
-                lines.append(r"\noindent\rule{\linewidth}{0.4pt}\\[0.45em]")
+            for i in range(n):
+                if i == 0:
+                    lines.append(rf"\vspace*{{{LINE_SPACING_CM:.2f}cm}}\noindent\rule{{\linewidth}}{{0.4pt}}")
+                else:
+                    lines.append(rf"\\[{LINE_SPACING_CM:.2f}cm]\noindent\rule{{\linewidth}}{{0.4pt}}")
             blocks.append(wrap("\n".join(lines)))
             continue
 
@@ -93,9 +97,8 @@ def render_workspace_blocks(
                 r"\begin{tikzpicture}[x=1cm,y=1cm]" + "\n" +
                 rf"\def\GridW{{{GRID_WIDTH_CM:.1f}}}" + "\n" +
                 rf"\def\GridH{{{h:.2f}}}" + "\n" +
-                rf"\draw[step={step_cm:.3f}cm, line width=0.12pt, color=gray!50] (0,0) grid (\GridW,\GridH);" + "\n" +
-                rf"\draw[step={major_step_cm:.3f}cm, line width=0.20pt, color=gray!75] (0,0) grid (\GridW,\GridH);" + "\n" +
-                r"\draw[line width=0.35pt, color=black!70] (0,0) rectangle (\GridW,\GridH);" + "\n" +
+                rf"\draw[step={step_cm:.3f}cm, line width=0.18pt, color=gray!65] (0,0) grid (\GridW,\GridH);" + "\n" +
+                rf"\draw[step={major_step_cm:.3f}cm, line width=0.28pt, color=gray!85] (0,0) grid (\GridW,\GridH);" + "\n" +
                 r"\end{tikzpicture}"
             ))
             continue
@@ -142,9 +145,8 @@ def render_workspace_blocks(
                 r"\begin{tikzpicture}[x=1cm,y=1cm]" + "\n" +
                 rf"\def\GridW{{{width_cm:.3f}}}" + "\n" +
                 rf"\def\GridH{{{height_cm:.3f}}}" + "\n" +
-                rf"\draw[step={step_cm:.3f}cm, line width=0.12pt, color=gray!50] (0,0) grid (\GridW,\GridH);" + "\n" +
-                rf"\draw[step={major_step_cm:.3f}cm, line width=0.20pt, color=gray!75] (0,0) grid (\GridW,\GridH);" + "\n" +
-                r"\draw[line width=0.35pt, color=black!70] (0,0) rectangle (\GridW,\GridH);" + "\n" +
+                rf"\draw[step={step_cm:.3f}cm, line width=0.18pt, color=gray!65] (0,0) grid (\GridW,\GridH);" + "\n" +
+                rf"\draw[step={major_step_cm:.3f}cm, line width=0.28pt, color=gray!85] (0,0) grid (\GridW,\GridH);" + "\n" +
                 x_axis + y_axis + origin + axis_labels +
                 r"\end{tikzpicture}"
             ))

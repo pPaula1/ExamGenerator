@@ -1,0 +1,28 @@
+{
+  "$schema": "../schemas/school/school_info.schema.json",
+  "id": "rs_knaben_neumarkt_opf",
+  "name": "Staatliche Realschule für Mädchen Neumarkt/OPf.",
+  "short_name": "RS Mädchen Neumarkt",
+  "address": {
+    "street": "",
+    "postal_code": "",
+    "city": "Neumarkt i.d.OPf.",
+    "state": "Bayern",
+    "country": "Deutschland"
+  },
+  "contact": {
+    "phone": "",
+    "email": "",
+    "website": ""
+  },
+  "logo": {
+    "path": "logo.png"
+  },
+  "defaults": {
+    "exam_title_prefix": "Schulaufgabe",
+    "teacher": "",
+    "class_name": "",
+    "subject": ""
+  },
+  "version": "1.0"
+}

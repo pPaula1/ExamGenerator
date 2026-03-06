@@ -13,6 +13,7 @@ from pathlib import Path
 from typing import Any
 
 from header_pdf_renderer import build_header_block_tex, load_json as load_header_json
+from schema_utils import validate_instance
 from task_pdf_renderer import latex_escape, render_task
 
 
@@ -21,6 +22,29 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 def load_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def normalize_font_family(exam_data: dict[str, Any]) -> str:
+    render_cfg = exam_data.get("render") or {}
+    raw = str(render_cfg.get("font_family", "times")).strip().lower()
+    aliases = {
+        "latin_modern": "latin-modern",
+    }
+    value = aliases.get(raw, raw)
+    if value not in {"default", "latin-modern", "times"}:
+        return "times"
+    return value
+
+
+def font_package_lines(font_family: str) -> list[str]:
+    if font_family == "latin-modern":
+        return [r"\usepackage{lmodern}"]
+    if font_family == "times":
+        return [
+            r"\usepackage{newtxtext}",
+            r"\usepackage{newtxmath}",
+        ]
+    return []
 
 
 def resolve_ref(base_file: Path, ref: str) -> Path:
@@ -38,10 +62,13 @@ def resolve_ref(base_file: Path, ref: str) -> Path:
     if "tasks" in parts:
         idx = parts.index("tasks")
         candidates.append((PROJECT_ROOT / Path(*parts[idx:])).resolve())
+        candidates.append((PROJECT_ROOT / "data" / Path(*parts[idx:])).resolve())
     if str(p).startswith("../tasks/"):
         candidates.append((PROJECT_ROOT / "tasks" / str(p)[9:]).resolve())
+        candidates.append((PROJECT_ROOT / "data" / "tasks" / str(p)[9:]).resolve())
     if str(p).startswith("tasks/"):
         candidates.append((PROJECT_ROOT / p).resolve())
+        candidates.append((PROJECT_ROOT / "data" / p).resolve())
 
     for c in candidates:
         if c.exists():
@@ -61,6 +88,7 @@ def merge_school_into_header(
         school_file = resolve_ref(exam_file, school_ref)
         if school_file.exists():
             school_data = load_json(school_file)
+            validate_instance(school_data, "school", label=str(school_file))
             if not merged.get("school_name") and school_data.get("name"):
                 merged["school_name"] = school_data.get("name")
             defaults = school_data.get("defaults") or {}
@@ -114,6 +142,7 @@ def load_exam_tasks(exam_file: Path, exam_data: dict[str, Any]) -> list[dict[str
         if not task_file.exists():
             raise FileNotFoundError(f"Task JSON not found: {path_ref} -> {task_file}")
         data = load_json(task_file)
+        validate_instance(data, "task", label=str(task_file))
 
         if task_id and str(data.get("id", "")) != str(task_id):
             raise ValueError(f"task_id mismatch in {task_file}: expected '{task_id}', got '{data.get('id')}'")
@@ -139,9 +168,12 @@ def load_exam_tasks(exam_file: Path, exam_data: dict[str, Any]) -> list[dict[str
 
 
 def render_points_overview(rows: list[dict[str, Any]]) -> str:
+    # Keep heading + table together; if there is not enough space,
+    # LaTeX moves the whole block to the next page.
+    needed_lines = len(rows) + 8
     lines = [
-        r"\newpage",
-        r"\section*{Punkteübersicht}",
+        rf"\Needspace{{{needed_lines}\baselineskip}}",
+        r"\section*{Punkteuebersicht}",
         r"\begin{tabular}{|p{0.10\linewidth}|p{0.68\linewidth}|p{0.16\linewidth}|}",
         r"\hline",
         r"\textbf{Nr.} & \textbf{Aufgabe} & \textbf{Punkte} \\",
@@ -153,15 +185,16 @@ def render_points_overview(rows: list[dict[str, Any]]) -> str:
         pts = float(row["points"])
         total += pts
         pts_text = f"{pts:g}"
+        pts_cell = rf"\hfill / {pts_text}"
         lines.extend(
             [
-                rf"{i} & {name} & {pts_text} \\",
+                rf"{i} & {name} & {pts_cell} \\",
                 r"\hline",
             ]
         )
     lines.extend(
         [
-            rf"\multicolumn{{2}}{{|r|}}{{\textbf{{Gesamt}}}} & \textbf{{{total:g}}} \\",
+            rf"\multicolumn{{2}}{{|r|}}{{\textbf{{Gesamt}}}} & \textbf{{\hfill / {total:g}}} \\",
             r"\hline",
             r"\end{tabular}",
         ]
@@ -175,6 +208,11 @@ def build_exam_tex(
     out_dir: Path,
 ) -> str:
     header_file, header_data, tasks, total_points = prepare_exam_parts(exam_file, exam_data)
+    font_family = normalize_font_family(exam_data)
+    font_lines = font_package_lines(font_family)
+    # newtxmath/newtxtext ("times") conflicts with amssymb on \Bbbk.
+    # Keep amsmath everywhere, but skip amssymb for the times preset.
+    symbol_lines = [] if font_family == "times" else [r"\usepackage{amssymb}"]
 
     header_block = build_header_block_tex(header_file, header_data, f"{total_points:g}")
 
@@ -193,6 +231,9 @@ def build_exam_tex(
             r"\usepackage[T1]{fontenc}",
             r"\usepackage[utf8]{inputenc}",
             r"\usepackage[ngerman]{babel}",
+            r"\usepackage{amsmath}",
+            *font_lines,
+            *symbol_lines,
             r"\usepackage{geometry}",
             r"\usepackage{graphicx}",
             r"\usepackage{array}",
@@ -223,9 +264,11 @@ def prepare_exam_parts(
         if not header_file.exists():
             raise FileNotFoundError(f"Header JSON not found: {header_spec} -> {header_file}")
         header_data = load_header_json(header_file)
+        validate_instance(header_data, "header", label=str(header_file))
     elif isinstance(header_spec, dict):
         header_file = exam_file
         header_data = dict(header_spec)
+        validate_instance(header_data, "header", label=f"{exam_file}#header")
     else:
         header_file = exam_file
         header_data = {"title": str(exam_data.get("name", "Pruefung"))}
@@ -275,6 +318,7 @@ def main() -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
 
     exam_data = load_json(exam_file)
+    validate_instance(exam_data, "exam", label=str(exam_file))
     tex_content = build_exam_tex(exam_file, exam_data, out_dir)
     tex_file = out_dir / f"{args.name}.tex"
     tex_file.write_text(tex_content, encoding="utf-8")

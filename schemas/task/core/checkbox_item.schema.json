@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "core/checkbox_item.schema.json",
+  "title": "Checkbox Item",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["text"],
+  "properties": {
+    "id": { "$ref": "../shared/common.schema.json#/$defs/partId" },
+    "text": { "type": "string", "minLength": 1 },
+    "is_correct": {
+      "type": "boolean",
+      "default": false,
+      "description": "Optional: marks the statement as correct for solution export."
+    }
+  }
+}

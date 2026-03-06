@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "core/table.schema.json",
+  "title": "Table",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["headers", "rows"],
+  "properties": {
+    "headers": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "../shared/common.schema.json#/$defs/nonEmptyString" }
+    },
+    "rows": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "array",
+        "items": { "type": "string" }
+      }
+    },
+    "show_header": {
+      "type": "boolean",
+      "default": true
+    },
+    "align": {
+      "description": "Single alignment for all columns or per-column alignments.",
+      "oneOf": [
+        { "type": "string", "enum": ["left", "center", "right"] },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "enum": ["left", "center", "right"] }
+        }
+      ],
+      "default": "left"
+    },
+    "column_widths_cm": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "number", "exclusiveMinimum": 0 }
+    },
+    "border": {
+      "type": "string",
+      "enum": ["full_grid", "outer", "rows", "none"],
+      "default": "full_grid"
+    }
+  }
+}

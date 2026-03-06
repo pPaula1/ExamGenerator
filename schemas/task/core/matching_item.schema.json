@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "core/matching_item.schema.json",
+  "title": "Matching Item",
+  "description": "Single item text for a matching task side.",
+  "oneOf": [
+    { "$ref": "../shared/common.schema.json#/$defs/nonEmptyString" },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text"],
+      "properties": {
+        "id": { "$ref": "../shared/common.schema.json#/$defs/partId" },
+        "text": { "$ref": "../shared/common.schema.json#/$defs/nonEmptyString" }
+      }
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "task.schema.json",
+  "id": "2025_chemie_1sa_a09",
+  "name": "Magnesium und Stickstoff",
+  "subject": "Chemie",
+  "topic": "Ionenbindung",
+  "tags": [
+    "schulaufgabe",
+    "chemie",
+    "klasse10",
+    "elektronen-protonenuebergaenge",
+    "2025",
+    "auto-import"
+  ],
+  "points": 4,
+  "statement": "Hier siehst du die Gesamtreaktion von Magnesium mit Stickstoff: 3Mg + N2 -> 3Mg2+ + 2N3-.",
+  "parts": [
+    {
+      "id": "a",
+      "text": "Kennzeichne die Elektronenabgabe und die Elektronenaufnahme mit beschrifteten Pfeilen. Die Teilgleichungen müssen nicht extra notiert werden.",
+      "points": 2,
+      "textboxes": [
+        {
+          "type": "formula",
+          "formula": "3Mg + N_2 \\rightarrow 3Mg^{2+} + 2N^{3-}",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "id": "b",
+      "text": "Bei der Reaktion von Metallen mit Nichtmetallen entstehen Salze. Stelle die Verhältnisformel für das entstehende Salz auf und benenne es chemisch korrekt.",
+      "points": 2,
+      "textboxes": [
+        {
+          "type": "text",
+          "text": "Verhältnisformel:",
+          "align": "left"
+        },
+                      {
+          "type": "text",
+          "text": "Name des Salzes:",
+          "align": "left"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "ref": "1_SA_Elektronen-und Protonenuebergaenge.pdf",
+    "notes": "Aufgabe 9, Seite 3. Automatisch aus PDF extrahiert, bitte inhaltlich prüfen."
+  },
+  "version": "1.0"
+}

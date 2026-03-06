@@ -1,0 +1,28 @@
+{
+  "$schema": "../schemas/exam/exam.schema.json",
+  "id": "exam_chemie_1sa",
+  "name": "Chemie 1. Schulaufgabe 2025",
+  "subtitle": "Alle Aufgaben aus chemie_1sa_2025",
+  "header": "../headers/header_chemie_1sa_mrsnm.json",
+  "school_info_ref": "../schools/MRSNm/realschule_mädchen_neumarkt_opf.school_info.json",
+  "tasks": [
+    "../tasks/chemie_1sa_2025/2025_chemie_1sa_a01/2025_chemie_1sa_a01.json",
+    "../tasks/chemie_1sa_2025/2025_chemie_1sa_a02/2025_chemie_1sa_a02.json",
+    "../tasks/chemie_1sa_2025/2025_chemie_1sa_a03/2025_chemie_1sa_a03.json",
+    "../tasks/chemie_1sa_2025/2025_chemie_1sa_a04/2025_chemie_1sa_a04.json",
+    "../tasks/chemie_1sa_2025/2025_chemie_1sa_a05/2025_chemie_1sa_a05.json",
+    "../tasks/chemie_1sa_2025/2025_chemie_1sa_a06/2025_chemie_1sa_a06.json",
+    "../tasks/chemie_1sa_2025/2025_chemie_1sa_a07/2025_chemie_1sa_a07.json",
+    "../tasks/chemie_1sa_2025/2025_chemie_1sa_a08/2025_chemie_1sa_a08.json",
+    "../tasks/chemie_1sa_2025/2025_chemie_1sa_a09/2025_chemie_1sa_a09.json",
+    "../tasks/chemie_1sa_2025/2025_chemie_1sa_a10/2025_chemie_1sa_a10.json",
+    "../tasks/chemie_1sa_2025/2025_chemie_1sa_a11/2025_chemie_1sa_a11.json"
+  ],
+  "render": {
+    "title_page": false,
+    "page_break_between_tasks": true,
+    "show_total_points": true,
+    "font_family": "times"
+  },
+  "version": "1.0"
+}

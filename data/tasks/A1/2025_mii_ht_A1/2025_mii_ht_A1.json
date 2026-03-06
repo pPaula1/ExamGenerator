@@ -1,0 +1,57 @@
+{
+  "$schema": "task.schema.json",
+  "id": "2025_mii_ht_a1",
+  "name": "Wahlpflichtfächergruppe",
+  "subject": "Mathematik",
+  "topic": "Stochastik",
+  "tags": [
+    "abschlussprüfung",
+    "realschule",
+    "bayern",
+    "2025",
+    "stochastik",
+    "baumdiagramm"
+  ],
+  "points": 3,
+  "statement": "An einer Realschule wählen die Mädchen („M“) und Jungen („J“) der Jahrgangsstufe 6 ihre Wahlpflichtfächergruppe. Einige der Kinder entscheiden sich für die Wahlpflichtfächergruppe IIIa („IIIa“), alle anderen entscheiden sich nicht für die Wahlpflichtfächergruppe IIIa („nIIIa“). Das Baumdiagramm zeigt die jeweiligen Anteile.",
+  "assets": [
+    {
+      "path": "assets/A1_tree.png",
+      "caption": null,
+      "width": "0.75\\linewidth",
+      "placement": "below_statement",
+      "column": "full"
+    }
+  ],
+  "parts": [
+    {
+      "id": "a1_1",
+      "text": "Für die Schülerzeitung wird ein zufällig ausgewähltes Kind der Jahrgangsstufe 6 zu seiner Wahl befragt. Bestätigen Sie rechnerisch: Es ist mit einer Wahrscheinlichkeit von 26% ein Kind ausgewählt worden, das sich für die Wahlpflichtfächergruppe IIIa entschieden hat.",
+      "points": 2,
+      "workspace": [
+        {
+          "type": "grid",
+          "height_cm": 5,
+          "grid": "karo_5mm"
+        }
+      ]
+    },
+    {
+      "id": "a1_2",
+      "text": "An dieser Schule besuchen 150 Kinder die Jahrgangsstufe 6. Geben Sie an, wie viele dieser Kinder sich für die Wahlpflichtfächergruppe IIIa entschieden haben.",
+      "points": 1,
+      "workspace": [
+        {
+          "type": "grid",
+          "height_cm": 5,
+          "grid": "karo_5mm"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "ref": "Abschlussprüfung 2025 an den Realschulen in Bayern – Mathematik II – Haupttermin (PDF)",
+    "notes": "Aufgabengruppe A, Aufgabe A1 (Seite 1)"
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,78 @@
+{
+  "$schema": "task.schema.json",
+  "id": "2025_chemie_1sa_a01",
+  "name": "Grundwissen",
+  "subject": "Chemie",
+  "topic": "Grundwissen",
+  "tags": [
+    "schulaufgabe",
+    "chemie",
+    "klasse10",
+    "elektronen-protonenuebergaenge",
+    "2025",
+    "auto-import"
+  ],
+  "points": 4,
+  "statement": "Grundwissen zu Laborgeräten und Gefahrstoffsymbolen.",
+  "parts": [
+    {
+      "id": "a",
+      "text": "Ergänze die Namen der Laborgeräte.",
+      "points": 2,
+      "assets": [
+        {
+          "path": "assets/laborgeraet_1.png",
+          "caption": "Laborgerät 1",
+          "width": "0.25\\linewidth",
+          "placement": "below_statement",
+          "column": "left"
+        },
+        {
+          "path": "assets/laborgeraet_2.png",
+          "caption": "Laborgerät 2",
+          "width": "0.25\\linewidth",
+          "placement": "below_statement",
+          "column": "right"
+        }
+      ],
+      "workspace": [
+        {
+          "type": "lines",
+          "lines": 1
+        }
+      ]
+    },
+    {
+      "id": "b",
+      "text": "Auf einem Rohrreinigerkonzentrat sind folgende Piktogramme zu sehen. Benenne die Gefahrstoffsymbole chemisch exakt.",
+      "points": 2,
+      "assets": [
+        {
+          "path": "assets/gefahrstoffsymbol_achtung.png",
+          "caption": "Gefahrstoffsymbol 1",
+          "width": "0.28\\linewidth",
+          "placement": "below_statement",
+          "column": "left"
+        },
+        {
+          "path": "assets/gefahrstoffsymbol_aetzend.png",
+          "caption": "Gefahrstoffsymbol 2",
+          "width": "0.28\\linewidth",
+          "placement": "below_statement",
+          "column": "right"
+        }
+      ],
+      "workspace": [
+        {
+          "type": "lines",
+          "lines": 1
+        }
+      ]
+    }
+  ],
+  "source": {
+    "ref": "1_SA_Elektronen-und Protonenuebergaenge.pdf",
+    "notes": "Aufgabe 1, Seite 1. Automatisch aus PDF extrahiert, bitte inhaltlich prüfen."
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,50 @@
+{
+  "$schema": "task.schema.json",
+  "id": "2025_chemie_1sa_a04",
+  "name": "Chlorwasserstoff in Wasser",
+  "subject": "Chemie",
+  "topic": "Säure-Base-Reaktionen",
+  "tags": [
+    "schulaufgabe",
+    "chemie",
+    "klasse10",
+    "elektronen-protonenuebergaenge",
+    "2025",
+    "auto-import"
+  ],
+  "points": 8,
+  "statement": "Experiment: Chlorwasserstoffgas wird in Wasser geleitet.",
+  "parts": [
+    {
+      "id": "a",
+      "text": "Formuliere die Reaktionsgleichung zum Experiment in Elektronenschreibweise.",
+      "points": 4,
+            "workspace": [
+        {
+          "type": "blank",
+          "height_cm": 3
+        }
+      ]
+    },
+    {
+      "id": "b",
+      "text": "Kreise in der Reaktionsgleichung aus Teil a das Teilchen ein, das für die typischen Eigenschaften von Säurelösungen verantwortlich ist, und benenne es chemisch richtig.",
+      "points": 1.5,
+      "workspace": [
+        {
+          "type": "lines",
+          "lines": 1
+        }
+      ]
+    },
+    {
+      "id": "c",
+      "text": "Diese Reaktion ist eine Donator-Akzeptor-Reaktion. Fülle die Lücken sinnvoll: Teilchen, die Protonen abgeben, werden als ____ bezeichnet. Teilchen, die Protonen aufnehmen, als ____. Reaktionen mit Protonenübergang nennt man ____. Diese verlaufen energetisch betrachtet stets ____.",
+      "points": 2.5
+    }
+  ],
+  "source": {
+    "ref": "1_SA_Elektronen-und Protonenuebergaenge.pdf"
+  },
+  "version": "1.0"
+}

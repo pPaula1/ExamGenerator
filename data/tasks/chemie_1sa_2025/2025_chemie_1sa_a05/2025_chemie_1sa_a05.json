@@ -1,0 +1,55 @@
+{
+  "$schema": "task.schema.json",
+  "id": "2025_chemie_1sa_a05",
+  "name": "Schwefelsäure - Protolyse und Verwendung",
+  "subject": "Chemie",
+  "topic": "Saeure-Base-Reaktionen",
+  "tags": [
+    "schulaufgabe",
+    "chemie",
+    "klasse10",
+    "elektronen-protonenuebergaenge",
+    "2025",
+    "auto-import"
+  ],
+  "points": 4.5,
+  "statement": "Schwefelsäure ist eine starke Säure mit vielfältigen Anwendungen.",
+  "parts": [
+    {
+      "id": "a",
+      "text": "Ergänze die Protolysereaktionen der Schwefelsäure und benenne das letzte entstehende Säurerest-Ion.",
+      "points": 3.5,
+      "assets": [
+        {
+          "path": "assets/protolyse_1.png",
+          "caption": "Protolysereaktion 1 (Lücken)",
+          "width": "0.95\\linewidth",
+          "placement": "below_part_text",
+          "column": "full"
+        },
+        {
+          "path": "assets/protolyse_2.png",
+          "caption": "Protolysereaktion 2 (Lücken)",
+          "width": "0.95\\linewidth",
+          "placement": "below_part_text",
+          "column": "full"
+        }
+      ]
+    },
+    {
+      "id": "b",
+      "text": "Nenne eine Verwendungsmöglichkeit der Schwefelsäure.",
+      "points": 1,
+            "workspace": [
+        {
+          "type": "lines",
+          "lines": 1
+        }
+      ]
+    }
+  ],
+  "source": {
+    "ref": "1_SA_Elektronen-und Protonenuebergaenge.pdf"
+  },
+  "version": "1.0"
+}

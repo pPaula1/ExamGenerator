@@ -1,0 +1,94 @@
+{
+  "$schema": "task.schema.json",
+  "id": "2025_mii_ht_b4",
+  "name": "Pyramide",
+  "subject": "Mathematik",
+  "topic": "Geometrie",
+  "tags": [
+    "abschlussprüfung",
+    "realschule",
+    "bayern",
+    "2025",
+    "geometrie",
+    "pyramide",
+    "volumen"
+  ],
+  "points": 16,
+  "statement": "Die nebenstehende Skizze zeigt ein Schrägbild der Pyramide ABCDS mit der Höhe $\\overline{MS}$, deren Grundfläche das Quadrat ABCD mit dem Diagonalenschnittpunkt M ist. Es gilt: |AC| = 12 cm; |MS| = 8,5 cm. Runden Sie im Folgenden auf zwei Stellen nach dem Komma.",
+  "assets": [
+    {
+      "path": "assets/B4_pyramid.png",
+      "caption": null,
+      "width": "0.42\\linewidth",
+      "placement": "below_statement",
+      "column": "full"
+    }
+  ],
+  "parts": [
+    {
+      "id": "b4_1",
+      "text": "Zeichnen Sie das Schrägbild der Pyramide ABCDS, wobei die Strecke AC auf der Schrägbildachse und der Punkt A links vom Punkt C liegen soll. Für die Zeichnung gilt: q = 1/2; Ï‰ = 45Â°. Berechnen Sie sodann die Länge der Strecke AS sowie das Maß des Winkels MAS. (Teilergebnisse: |AS| = 10,40 cm; âˆ MAS = 54,78Â°)",
+      "points": 4,
+      "workspace": [
+        {
+          "type": "grid",
+          "height_cm": 6.0,
+          "grid": "karo_5mm"
+        }
+      ]
+    },
+    {
+      "id": "b4_2",
+      "text": "Für Punkte $P_n \\in \\overline{AS}$ gilt: $\\left|\\overline{SP_n}\\right|(x) = x\\,\\mathrm{cm} \\quad (x \\in \\mathbb{R};\\; 0 \\le x < 10{,}40)$. Sie sind die Spitzen von Pyramiden $AMDP_n$ mit den Höhen Pâ‚™Hâ‚™.\nZeichnen Sie für x = 5 die Pyramide AMDPâ‚ und die Höhe Pâ‚Hâ‚ in das Schrägbild zu B4.1 ein. Berechnen Sie sodann die Länge der Strecke MPâ‚ sowie den Flächeninhalt des Dreiecks AMPâ‚.",
+      "points": 4,
+      "workspace": [
+        {
+          "type": "grid",
+          "height_cm": 5,
+          "grid": "karo_5mm"
+        }
+      ]
+    },
+    {
+      "id": "b4_3",
+      "text": "Zeigen Sie, dass für das Volumen der Pyramiden AMDPâ‚™ in Abhängigkeit von x gilt: V(x) = (âˆ’4,92x + 51,00) cm$x^3$. Unter den Pyramiden AMDPâ‚™ hat die Pyramide AMDPâ‚€ das maximale Volumen. Geben Sie den zugehörigen Wert von x sowie das maximale Volumen an.",
+      "points": 4,
+      "workspace": [
+        {
+          "type": "grid",
+          "height_cm": 5,
+          "grid": "karo_5mm"
+        }
+      ]
+    },
+    {
+      "id": "b4_4",
+      "text": "Die Pyramide $AMDP_2$‚‚ hat ein Volumen von 35 cm³. Berechnen Sie den zugehörigen Wert von x. Geben Sie sodann das Intervall für x an, so dass gilt: V(x) $\\ge$ 35 cm$^3$.",
+      "points": 2.5,
+      "workspace": [
+        {
+          "type": "grid",
+          "height_cm": 5,
+          "grid": "karo_5mm"
+        }
+      ]
+    },
+    {
+      "id": "b4_5",
+      "text": "Die Höhe der Pyramide $AMDP_3$ ist halb so lang wie die Höhe der Pyramide ABCDS. Begründen Sie, weshalb das Volumen der Pyramide ABCDS achtmal so groß wie das Volumen der Pyramide $AMDP_3$ ist.",
+      "points": 1.5,
+      "workspace": [
+        {
+          "type": "grid",
+          "height_cm": 5,
+          "grid": "karo_5mm"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "ref": "Abschlussprüfung 2025 an den Realschulen in Bayern â€“ Mathematik II â€“ Haupttermin (PDF)",
+    "notes": "Aufgabengruppe B, Aufgabe B4 (Seite 10)"
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "core/matching_group.schema.json",
+  "title": "Matching Group",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["left_items", "right_items"],
+  "properties": {
+    "left_items": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "./matching_item.schema.json" }
+    },
+    "right_items": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "./matching_item.schema.json" }
+    }
+  }
+}

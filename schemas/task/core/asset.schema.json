@@ -15,6 +15,10 @@
       "type": ["string", "null"],
       "default": null
     },
+    "show_caption": {
+      "type": "boolean",
+      "default": false
+    },
     "width": {
       "type": "string",
       "default": "0.8\\linewidth"

@@ -1,0 +1,29 @@
+{
+  "$schema": "task.schema.json",
+  "id": "2025_chemie_1sa_a10",
+  "name": "Hydratation von Ionen",
+  "subject": "Chemie",
+  "topic": "Salze in Wasser",
+  "tags": [
+    "schulaufgabe",
+    "chemie",
+    "klasse10",
+    "elektronen-protonenuebergaenge",
+    "2025",
+    "auto-import"
+  ],
+  "points": 3,
+  "statement": "Beim Lösevorgang von Salz in Wasser können Wasser-Moleküle sowohl positiv als auch negativ geladene Ionen umhüllen. Zeichne ein beliebiges Kation und ein beliebiges Anion mit jeweils vier umgebenden Wasser-Molekülen. Trage die Ladungen der Ionen und die Partialladungen (delta+/delta-) von mindestens einem Wassermolekül ein.",
+  "parts": [],
+  "workspace": [
+    {
+      "type": "blank",
+      "height_cm": 1.0
+    }
+  ],
+  "source": {
+    "ref": "1_SA_Elektronen-und Protonenuebergaenge.pdf",
+    "notes": "Aufgabe 10, Seite 4. Automatisch aus PDF extrahiert, bitte inhaltlich prüfen."
+  },
+  "version": "1.0"
+}

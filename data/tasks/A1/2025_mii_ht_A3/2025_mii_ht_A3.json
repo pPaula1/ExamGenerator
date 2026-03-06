@@ -1,0 +1,29 @@
+{
+  "$schema": "task.schema.json",
+  "id": "2025_mii_ht_a3",
+  "name": "Scheitelpunkt und Wertemenge",
+  "subject": "Mathematik",
+  "topic": "Funktionen",
+  "tags": [
+    "abschlussprüfung",
+    "realschule",
+    "bayern",
+    "2025",
+    "parabel",
+    "wertemenge"
+  ],
+  "points": 2,
+  "statement": "Die Parabel q ist der Graph der Funktion f: y = 2x² + 4x + 8 (x,y ∈ ℝ). Berechnen Sie die y‑Koordinate des Scheitelpunktes der Parabel q. Geben Sie sodann die Wertemenge der Funktion f an.",
+  "workspace": [
+    {
+      "type": "grid",
+      "height_cm": 5,
+      "grid": "karo_5mm"
+    }
+  ],
+  "source": {
+    "ref": "Abschlussprüfung 2025 an den Realschulen in Bayern – Mathematik II – Haupttermin (PDF)",
+    "notes": "Aufgabengruppe A, Aufgabe A3 (Seite 3)"
+  },
+  "version": "1.0"
+}

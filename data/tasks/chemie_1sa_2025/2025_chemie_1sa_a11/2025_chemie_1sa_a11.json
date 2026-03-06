@@ -1,0 +1,65 @@
+{
+  "$schema": "task.schema.json",
+  "id": "2025_chemie_1sa_a11",
+  "name": "Kaliummonochlorid in Wasser",
+  "subject": "Chemie",
+  "topic": "Salze in Wasser",
+  "tags": [
+    "schulaufgabe",
+    "chemie",
+    "klasse10",
+    "elektronen-protonenuebergaenge",
+    "2025",
+    "auto-import"
+  ],
+  "points": 5,
+  "statement": "Kaliummonochlorid wird in Wasser gelöst.",
+  "parts": [
+    {
+      "id": "a",
+      "text": "Formuliere den Lösungsvorgang als Formelgleichung.",
+      "points": 2,
+      "workspace": [
+        {
+          "type": "lines",
+          "lines": 1
+        }
+      ]
+    },
+    {
+      "id": "b",
+      "text": "Beim Lösen eines Salzes wirkt die Gitterenergie entgegen der Hydratationsenergie. Setze mathematische Zeichen (<, >, =) ein, damit die Aussagen passen:",
+      "points": 2,
+      "textboxes": [
+        {
+          "type": "text",
+          "text": "Gitterenergie ___ Hydratationsenergie:      Keine Temperaturveränderung",
+          "align": "left",
+          "raw_latex": true
+        },
+        {
+          "type": "text",
+          "text": "Gitterenergie ___ Hydratationsenergie:      Lösung kühlt sich ab",
+          "align": "left",
+          "raw_latex": true
+        },
+        {
+          "type": "text",
+          "text": "Gitterenergie ___ Hydratationsenergie:      Lösung erwärmt sich",
+          "align": "left",
+          "raw_latex": true
+        }
+      ]
+    },
+    {
+      "id": "c",
+      "text": "Löst man Kaliummonochlorid in Wasser, so kühlt die Lösung ab. Mache einen Vorschlag, wofür man dieses Salz im Alltag verwenden könnte.",
+      "points": 1
+    }
+  ],
+  "source": {
+    "ref": "1_SA_Elektronen-und Protonenuebergaenge.pdf",
+    "notes": "Aufgabe 11, Seite 4. Automatisch aus PDF extrahiert, bitte inhaltlich prüfen."
+  },
+  "version": "1.0"
+}

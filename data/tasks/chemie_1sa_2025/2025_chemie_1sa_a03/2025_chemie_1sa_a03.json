@@ -1,0 +1,56 @@
+{
+  "$schema": "task.schema.json",
+  "id": "2025_chemie_1sa_a03",
+  "name": "Universalindikator und Ionen",
+  "subject": "Chemie",
+  "topic": "Säure-Base",
+  "tags": [
+    "schulaufgabe",
+    "chemie",
+    "klasse10",
+    "elektronen-protonenuebergaenge",
+    "2025",
+    "auto-import"
+  ],
+  "points": 4,
+  "statement": "Experiment zu Reinigungsmitteln und Universalindikator.",
+  "parts": [
+    {
+      "id": "a",
+      "type": "matching",
+      "text": "Ordne mit Linien den Reinigungsmitteln die richtige Färbung zu.",
+      "matching": {
+        "left_items": [
+          "Backofenspray",
+          "Kernseifenlösung",
+          "Essig",
+          "Natronlauge",
+          "Zitronensaft",
+          "Leitungswasser"
+        ],
+        "right_items": [
+          "Grün/Gelb",
+          "Rot",
+          "Blau"
+        ]
+      },
+      "points": 3
+    },
+    {
+      "id": "b",
+      "text": "Benenne die Ionen, die für den alkalischen Charakter der Lösungen verantwortlich sind.",
+      "points": 1,
+      "workspace": [
+        {
+          "type": "lines",
+          "lines": 1
+        }
+      ]
+    }
+  ],
+  "source": {
+    "ref": "1_SA_Elektronen-und Protonenuebergaenge.pdf",
+    "notes": "Aufgabe 3, Seite 1. Automatisch aus PDF extrahiert, bitte inhaltlich prüfen."
+  },
+  "version": "1.0"
+}

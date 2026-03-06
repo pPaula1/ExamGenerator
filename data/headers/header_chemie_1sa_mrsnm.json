@@ -1,0 +1,19 @@
+{
+  "$schema": "../../schemas/header/header.schema.json",
+  "id": "header_chemie_1sa_mrsnm",
+  "title": "1. Schulaufgabe aus der Chemie",
+  "school_name": "Staatliche Realschule fuer Maedchen Neumarkt/OPf.",
+  "subject": "Chemie",
+  "allowed_materials": "Taschenrechner, Formelsammlung",
+  "show_nta_measures": true,
+  "show_time_bonus_percent": true,
+  "teacher": "Kastner",
+  "logo_path": "../schools/MRSNm/Logo.jpg",
+  "layout": {
+    "show_logo": true,
+    "show_border": true,
+    "header_height_cm": 4.0,
+    "logo_width_cm": 2.8
+  },
+  "version": "1.0"
+}

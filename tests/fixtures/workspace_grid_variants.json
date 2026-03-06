@@ -142,7 +142,7 @@
       "workspace": [
         { "type": "blank", "height_cm": 1.5 },
         { "type": "grid", "height_cm": 3, "grid": "karo_5mm" },
-        { "type": "coord_grid", "xmin": -3, "xmax": 4, "ymin": -2, "ymax": 4, "unit_cm": 0.8, "grid": "karo_5mm" }
+        { "type": "coord_grid", "xmin": -3, "xmax": 4, "ymin": -2, "ymax": 4, "unit_cm": 1, "grid": "karo_5mm" }
       ]
     },
     {

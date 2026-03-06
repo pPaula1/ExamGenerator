@@ -13,8 +13,8 @@ Highlights:
 - Unknown generator types become a Markdown note (no crash).
 
 Usage:
-  python render_tasks.py --tasks-dir tasks --out-dir out --single-md exam.md
-  python render_tasks.py --tasks-dir tasks --out-dir out --single-md exam.md --img-format both
+  python render_tasks.py --tasks-dir data/tasks --out-dir out --single-md exam.md
+  python render_tasks.py --tasks-dir data/tasks --out-dir out --single-md exam.md --img-format both
 """
 
 from __future__ import annotations
@@ -242,7 +242,7 @@ def render_task_to_md(task: Dict[str, Any], out_assets_dir: Path, img_format: st
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--tasks-dir", default="tasks")
+    ap.add_argument("--tasks-dir", default="data/tasks")
     ap.add_argument("--out-dir", default="out")
     ap.add_argument("--single-md", default="")
     ap.add_argument("--img-format", choices=["png", "svg", "both"], default="png",
